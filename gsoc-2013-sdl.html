@@ -37,14 +37,28 @@
 	<section id="posts">
 			<header>
 		<h1>Apoorv Upreti's blog</h1>
-		<h3>Posted Tue 28 May 2013</h3>
+		<h3>Posted Mon 10 June 2013</h3>
 	</header>
 	<article>
 		<h1 id="title">
 			<a href="http://nerdap.github.io/gsoc-2013-sdl.html" rel="bookmark"
 				title="Permalink to Google Summer of Code 2013 under SDL">Google Summer of Code 2013 under SDL</a>
 		</h1>
-		<p>It should be a fun summer.</p>
+		<p>SDL or Simple DirectMedia Layer is a low-level, cross-platform multimedia library that provides access to keyboard, mouse, audio and video hardware. It's available for Windows, Linux, OS X, iOS, Android, and many other platforms.</p>
+<p>My GSoC project concerns a test in the SDL test suite called testsprite2. This test simply launches a window and moves sprites around the screen as fast as possible. The basic objective of the test is to answer three questions:</p>
+<ol>
+<li>Is the window being created by the window manager as expected? (correct title, resolution, window state, etc.)</li>
+<li>Is mouse behavior being detected correctly?</li>
+<li>Are the sprites inside the window rendered correctly?</li>
+</ol>
+<p>The goal of this GSoC project is to automate this process. There are two major challenges to overcome. Firstly, testsprite2 takes 26 parameters as input with thousands of valid combinations. Success would mean testing as many valid combinations as possible. Secondly, verifying the success of the test is inherently hard to automate - it's much easier for a human to answer the above questions than for a computer to. By automating testsprite2, I hope to make it easier to detect certain kinds of bugs in SDL's code, ones that were missed out previously.</p>
+<p>I started using SDL years ago when I was still in high school. I fondly remember following lazy_foo's tutorials and struggling with concepts like blitting, double buffering and alpha blending. I look forward to working towards a top quality SDL 2.0 release this summer.</p>
+<p>Useful Links:</p>
+<ul>
+<li><a href="http://www.libsdl.org/gsoc.php" title="SDL GSoC Ideas Page">GSoC Ideas Page</a></li>
+<li><a href="https://github.com/nerdap/autotestsprite2/wiki" title="Project Wiki on GitHub">Project Wiki</a></li>
+<li><a href="http://www.google-melange.com/gsoc/proposal/review/google/gsoc2013/nerdap/10001" title="Application on Melange">Application on Melange</a></li>
+</ul>
 
 		<div id="article_meta">
 							Category:
