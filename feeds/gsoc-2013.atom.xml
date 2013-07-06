@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Apoorv's Blog</title><link href="http://nerdap.github.io/" rel="alternate"></link><link href="http://nerdap.github.io/feeds/gsoc-2013.atom.xml" rel="self"></link><id>http://nerdap.github.io/</id><updated>2013-06-23T22:16:00+05:30</updated><entry><title>GSoC 2013 Week 1 Review</title><link href="http://nerdap.github.io/gsoc-2013-week-1.html" rel="alternate"></link><updated>2013-06-23T22:16:00+05:30</updated><author><name>Apoorv Upreti</name></author><id>tag:nerdap.github.io,2013-06-23:gsoc-2013-week-1.html</id><summary type="html">&lt;p&gt;At the end of the community bonding period, Andreas and I went through the product backlog, adding demoables, sizing and reordering items, and adding and reorganizing themes. It was an interesting exercise because it helped me fully understand the complexity of the project and plan my future weeks better.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Apoorv's Blog</title><link href="http://nerdap.github.io/" rel="alternate"></link><link href="http://nerdap.github.io/feeds/gsoc-2013.atom.xml" rel="self"></link><id>http://nerdap.github.io/</id><updated>2013-07-02T18:23:00+05:30</updated><entry><title>GSoC 2013 Week 2 Review</title><link href="http://nerdap.github.io/gsoc-2013-week-2.html" rel="alternate"></link><updated>2013-07-02T18:23:00+05:30</updated><author><name>Apoorv Upreti</name></author><id>tag:nerdap.github.io,2013-07-02:gsoc-2013-week-2.html</id><summary type="html">&lt;p&gt;Last week I set up a basic API for launching and terminating processes on Windows. The API so far consists of just three functions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;SDL_LaunchProcess():&lt;/strong&gt; Launches a process with some command line arguments.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SDL_IsProcessRunning():&lt;/strong&gt; Checks if a process is running or not.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SDL_KillProcess():&lt;/strong&gt; Kills the specified process.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I also had to get a build setup working on Linux using autotools. It wasn't easy getting started - good tutorials that started from the basics were hard to find. The best resource I found was a &lt;a href="http://www.lrde.epita.fr/~adl/autotools.html"&gt;set of slides&lt;/a&gt; by Alexandre Duret-Lutz. I did get a build setup working in end, although I'll have to get some expert advice on it to make sure it's acceptable.&lt;/p&gt;
+&lt;p&gt;I've added doxygen documentation for functions and structs in the current API.&lt;/p&gt;
+&lt;p&gt;One issue to think about:&lt;/p&gt;
+&lt;p&gt;At least on Linux, PIDs can be reused. So IsProcessRunning() can report a process as running while in fact the process may have terminated a while back and a different process with the same PID may have taken its place. I'm not sure if this is a situation that I'll run into often enough for it to warrant fixing.&lt;/p&gt;
+&lt;p&gt;Next steps:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Implement process API for Linux.&lt;/li&gt;
+&lt;li&gt;Implement parsing command line parameters to the testharness.&lt;/li&gt;
+&lt;li&gt;Implement loading these command line parameters from a config file.&lt;/li&gt;
+&lt;li&gt;Timed quit for the SUT.&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="gsoc"></category><category term="sdl"></category></entry><entry><title>GSoC 2013 Week 1 Review</title><link href="http://nerdap.github.io/gsoc-2013-week-1.html" rel="alternate"></link><updated>2013-06-23T22:16:00+05:30</updated><author><name>Apoorv Upreti</name></author><id>tag:nerdap.github.io,2013-06-23:gsoc-2013-week-1.html</id><summary type="html">&lt;p&gt;At the end of the community bonding period, Andreas and I went through the product backlog, adding demoables, sizing and reordering items, and adding and reorganizing themes. It was an interesting exercise because it helped me fully understand the complexity of the project and plan my future weeks better.&lt;/p&gt;
 &lt;p&gt;And so began the GSoC coding period. The first theme I'm working on concerns the design and core infrastructure of the new visual test system. I didn't make as much progress as I wanted to this week but I feel it's a reasonable start.&lt;/p&gt;
 &lt;p&gt;Progress so far:&lt;/p&gt;
 &lt;ul&gt;
