@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" type="text/css" href="http://nerdap.github.io/theme/css/style.css">
+	<!--<link rel="stylesheet/less" type="text/css" href="/theme/css/style.less">-->
+	<!--<script src="/theme/js/less.js" type="text/javascript"></script>-->
+	<link rel="stylesheet" type="text/css" href="http://nerdap.github.io/theme/css/pygments.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:800,400,300|Inconsolata' rel='stylesheet' type='text/css'>
+
+	<link href="http://nerdap.github.io/" type="application/atom+xml" rel="alternate" title="Apoorv's Blog ATOM Feed" />
+	
+	
+			<title>Apoorv's Blog</title>
+		<meta charset="utf-8" />
+	</head>
+<body>
+	<section id="sidebar">
+		<figure id="user_logo">
+            <a href="http://nerdap.github.io"><div class="logo">&nbsp;</div></a>
+		</figure>
+
+		<div class="user_meta">
+            <h1 id="user"><a href="http://nerdap.github.io" class="">Apoorv Upreti</a></h1>
+			<h2></h2>
+						<ul>
+																			<li><a href="http://nerdap.github.io/pages/about.html">About</a></li>
+																</ul>
+		</div>
+		<footer>
+			<address>
+				Powered by <a href="http://pelican.notmyidea.org/">Pelican</a>,
+		                theme by <a href="https://github.com/wting/pelican-svbtle">wting</a>.
+			</address>
+		</footer>
+	</section>
+
+	<section id="posts">
+			<header>
+		<h1>Apoorv Upreti's blog</h1>
+		<h3>Posted Tue 01 October 2013</h3>
+	</header>
+	<article>
+		<h1 id="title">
+			<a href="http://nerdap.github.io/gsoc-2013-finishing-up.html" rel="bookmark"
+				title="Permalink to GSoC End Term Review">GSoC End Term Review</a>
+		</h1>
+		<p>GSoC officially ended on the 27th of this month. I've been a little late in finishing this blog post because I had exams from the 28th.</p>
+<p>Since this is probably my final GSoC blog post, I'm going to discuss how to setup and try out the test harness so members of the SDL community can use the test harness themselves and give comments or suggestions.</p>
+<h3>What we have so far</h3>
+<p>We've got a test harness that can run a system under test (SUT) executable for various combinations of command line parameters, take screenshots of the SUT windows and compare these screenshots with a repository of verification images.</p>
+<p>I've made available verification images for two configs that you can find below.</p>
+<h3>Trying out the automated testing</h3>
+<ul>
+<li>Start off by cloning the <a href="https://bitbucket.org/nerdap/sdlvisualtest">repository</a>.</li>
+<li>Build using the instructions in <code>visualtest/README.txt</code>.</li>
+<li>If you're using the Makefile to build, copy <code>testsprite2</code> and <code>icon.bmp</code> to the test harness executable directory. The VS solution does this automatically.</li>
+<li>Download the verification images for one of the configs:<ul>
+<li><a href="https://www.dropbox.com/s/nm02aem76m812ng/testsprite2_blendmodes.zip">testsprite2_blendmodes</a></li>
+<li><a href="https://www.dropbox.com/s/csypwryopaslpaf/testsprite2_geometry.zip">testsprite2_geometry</a></li>
+</ul>
+</li>
+<li>Extract the directory of verification images. The path to this directory should be passed to the test harness as <code>verify_dir</code>.</li>
+<li>Copy the <code>*.config</code>, <code>*.parameters</code> and <code>*.actions</code> files to the test harness executable directory.</li>
+<li>Run <code>testharness --config testsprite2_XXX.config --verify-dir /path/to/verify_dir</code>, where <code>testsprite2_XXX.config</code> is the name of the config file you want to use.</li>
+<li>If all goes well, all tests should pass and you should get a message like "X/X tests passed".</li>
+</ul>
+<p>That's about it. If any of the tests fail, do let me know. Take a look at <code>README.txt</code> for more detailed usage instructions and contact information.</p>
+<h3>What's next</h3>
+<p>Lots of tasks still remain. A more complete list is in README.txt, which I'll keep updating as time goes on. At the moment, the following are priorities:</p>
+<ul>
+<li>Implementing the SCREENSHOT action on Linux</li>
+<li>Fixing a bug with the SCREENSHOT action on Windows: it doesn't work when --fullscreen is passed to testsprite2</li>
+<li>Adding actions to inject mouse/keyboard events</li>
+<li>Adding actions to manipulate the SUT windows. E.g., minimize, maximize, resize, etc.</li>
+</ul>
+<h3>Conclusion</h3>
+<p>It's been a lot of fun working on this project over the summer. I'm really grateful to Andreas and the rest of the SDL community in making my first significant open source contribution a success. I plan to stay actively involved in the project and the SDL community in the future and to contribute often.</p>
+<p>Thanks for reading and goodbye!</p>
+
+		<div id="article_meta">
+							Category:
+					<a href="http://nerdap.github.io/category/gsoc-2013.html">GSoC 2013</a>
+										<br />Tags:
+									<a href="http://nerdap.github.io/tag/gsoc.html">gsoc</a>
+									<a href="http://nerdap.github.io/tag/sdl.html">sdl</a>
+									</div>
+	</article>
+
+	<footer>
+		<a href="http://nerdap.github.io/" class="button_accent">&larr;&nbsp;&nbsp;&nbsp;Back to blog</a>
+	</footer>
+
+		<div id="comments">
+		<h2>Comments</h2>
+		<div id="disqus_thread"></div>
+		<script type="text/javascript">
+			var disqus_identifier = "gsoc-2013-finishing-up.html";
+			(function() {
+				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+				dsq.src = 'http://apoorvblog.disqus.com/embed.js';
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			})();
+		</script>
+		<noscript>Please enable JavaScript to view <a href="http://disqus.com/?ref_noscript">comments</a>.</noscript>
+	</div>
+	
+	</section>
+
+	<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+		try {
+			var pageTracker = _gat._getTracker("UA-41298255-1");
+			pageTracker._trackPageview();
+		} catch(err) {}</script>
+</body>
+</html>
